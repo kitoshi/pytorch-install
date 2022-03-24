@@ -5,6 +5,13 @@ import CopySVG from '../components/copy'
 
 export default function Home() {
   const [button, setActive] = useState([])
+  const activeSelection = {
+    os: 'Windows',
+    build: 'Stable',
+    package: 'Conda',
+    language: 'Python',
+    platform: 'CUDA 10.2'
+  }
 
   useEffect(() => {
     function handleActiveButton() {
