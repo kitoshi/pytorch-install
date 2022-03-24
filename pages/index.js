@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import { useState, useEffect } from 'react'
+import CopySVG from '../components/copy'
 
 export default function Home() {
   const [button, setActive] = useState([])
@@ -89,7 +90,9 @@ export default function Home() {
             </td>
           </tr>
           <tr>
-            <th>Run this Command:</th>
+            <th style={{ borderLeft: '2px solid #0f0f0f' }}>
+              Run this Command:
+            </th>
             <td style={{ width: '65%' }}>
               <code>
                 pip3 install torch torchvision torchaudio --extra-index-url
@@ -104,7 +107,7 @@ export default function Home() {
                   )
                 }}
               >
-                clipboard image
+                <CopySVG />
               </button>
             </td>
           </tr>
