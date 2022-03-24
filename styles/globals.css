@@ -16,12 +16,21 @@ a {
   text-decoration: none;
 }
 
-table {
+section {
   width: 75vw;
   height: 50vh;
+  margin-top: 10%;
+  margin-left: 10%;
+}
+
+table {
+  table-layout: fixed;
+}
+
+tbody {
   display: flex;
   flex-direction: column;
-  margin-left: 10%;
+  height: 100%;
 }
 
 tr {
@@ -30,7 +39,6 @@ tr {
   text-align: left;
   height: 100%;
   align-items: center;
-  margin-top: 0.2rem;
 }
 
 th {
@@ -47,7 +55,6 @@ th {
 td {
   width: 25%;
   height: 100%;
-  margin-right: 0.2rem;
 }
 
 button {
@@ -92,8 +99,4 @@ code {
 
 th:active {
   border-left: 2px solid black;
-}
-
-svg {
-  z-index: 2;
 }

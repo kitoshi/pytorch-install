@@ -25,93 +25,104 @@ export default function Home() {
       </Head>
 
       <main>
-        <table>
-          <tr>
-            <th>Your OS</th>
-            <td>
-              <button>Linux</button>
-            </td>
-            <td>
-              <button>Mac</button>
-            </td>
-            <td>
-              <button>Windows</button>
-            </td>
-          </tr>
-          <tr>
-            <th>PyTorch Build</th>
-            <td>
-              <button>Stable</button>
-            </td>
-            <td>
-              <button>Preview</button>
-            </td>
-            <td>
-              <button>LTS</button>
-            </td>
-          </tr>
-          <tr>
-            <th>Package</th>
-            <td style={{ width: '18.75%' }}>
-              <button>Conda</button>
-            </td>
-            <td style={{ width: '18.75%' }}>
-              <button>Pip</button>
-            </td>
-            <td style={{ width: '18.75%' }}>
-              <button>LibTorch</button>
-            </td>
-            <td style={{ width: '18.75%' }}>
-              <button>Source</button>
-            </td>
-          </tr>
-          <tr>
-            <th>Language</th>
-            <td style={{ width: '37.5%' }}>
-              <button>Python</button>
-            </td>
-            <td style={{ width: '37.5%' }}>
-              <button>C++/Java</button>
-            </td>
-          </tr>
-          <tr>
-            <th>Compute Platform</th>
-            <td style={{ width: '18.75%' }}>
-              <button>CUDA 10.2</button>
-            </td>
-            <td style={{ width: '18.75%' }}>
-              <button>CUDA 11.3</button>
-            </td>
-            <td style={{ width: '18.75%' }}>
-              <button>ROCM 4.2 (beta)</button>
-            </td>
-            <td style={{ width: '18.75%' }}>
-              <button>CPU</button>
-            </td>
-          </tr>
-          <tr>
-            <th style={{ borderLeft: '2px solid #0f0f0f' }}>
-              Run this Command:
-            </th>
-            <td style={{ width: '65%' }}>
-              <code>
-                pip3 install torch torchvision torchaudio --extra-index-url
-                https://download.pytorch.org/whl/cu113
-              </code>
-            </td>
-            <td style={{ width: '10%' }}>
-              <button
-                onClick={() => {
-                  navigator.clipboard.writeText(
-                    `pip3 install torch torchvision torchaudio --extra-index-url https://download.pytorch.org/whl/cu113`
-                  )
-                }}
-              >
-                <CopySVG />
-              </button>
-            </td>
-          </tr>
-        </table>
+        <section>
+          <table>
+            <tbody>
+              <tr>
+                <th>Your OS</th>
+                <td>
+                  <button name={'Linux'}>Linux</button>
+                </td>
+                <td>
+                  <button name={'Mac'}>Mac</button>
+                </td>
+                <td>
+                  <button name={'Windows'}>Windows</button>
+                </td>
+              </tr>
+              <tr>
+                <th>PyTorch Build</th>
+                <td>
+                  <button>Stable</button>
+                </td>
+                <td>
+                  <button>Preview</button>
+                </td>
+                <td>
+                  <button>LTS</button>
+                </td>
+              </tr>
+              <tr>
+                <th>Package</th>
+                <td style={{ width: '18.75%' }}>
+                  <button>Conda</button>
+                </td>
+                <td style={{ width: '18.75%' }}>
+                  <button>Pip</button>
+                </td>
+                <td style={{ width: '18.75%' }}>
+                  <button>LibTorch</button>
+                </td>
+                <td style={{ width: '18.75%' }}>
+                  <button>Source</button>
+                </td>
+              </tr>
+              <tr>
+                <th>Language</th>
+                <td style={{ width: '37.5%' }}>
+                  <button>Python</button>
+                </td>
+                <td style={{ width: '37.5%' }}>
+                  <button>C++/Java</button>
+                </td>
+              </tr>
+              <tr>
+                <th>Compute Platform</th>
+                <td style={{ width: '18.75%' }}>
+                  <button>CUDA 10.2</button>
+                </td>
+                <td style={{ width: '18.75%' }}>
+                  <button>CUDA 11.3</button>
+                </td>
+                <td style={{ width: '18.75%' }}>
+                  <button>ROCM 4.2 (beta)</button>
+                </td>
+                <td style={{ width: '18.75%' }}>
+                  <button>CPU</button>
+                </td>
+              </tr>
+              <tr>
+                <th style={{ borderLeft: '2px solid #0f0f0f' }}>
+                  Run this Command:
+                </th>
+                <td style={{ width: '65%' }}>
+                  <code>
+                    pip3 install torch torchvision torchaudio --extra-index-url
+                    https://download.pytorch.org/whl/cu113
+                  </code>
+                </td>
+                <td
+                  style={{ width: '10%', height: '100%', alignSelf: 'normal' }}
+                >
+                  <button
+                    onClick={() => {
+                      navigator.clipboard.writeText(
+                        `pip3 install torch torchvision torchaudio --extra-index-url https://download.pytorch.org/whl/cu113`
+                      )
+                    }}
+                    style={{
+                      display: 'flex',
+                      justifyContent: 'center',
+                      alignItems: 'center'
+                    }}
+                  >
+                    <CopySVG />
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
       </main>
     </div>
   )
