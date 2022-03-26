@@ -1,20 +1,7 @@
 import Head from 'next/head'
-import Image from 'next/image'
-import { useState, useEffect } from 'react'
+import Table from './components/Table'
 
 export default function Home() {
-  const [button, setActive] = useState([])
-
-  useEffect(() => {
-    function handleActiveButton() {
-      setActive()
-    }
-    let buttons = document.querySelectorAll('button')
-    console.log(buttons)
-
-    return () => {}
-  }, [])
-
   return (
     <div>
       <Head>
@@ -24,91 +11,7 @@ export default function Home() {
       </Head>
 
       <main>
-        <table>
-          <tr>
-            <th>Your OS</th>
-            <td>
-              <button>Linux</button>
-            </td>
-            <td>
-              <button>Mac</button>
-            </td>
-            <td>
-              <button>Windows</button>
-            </td>
-          </tr>
-          <tr>
-            <th>PyTorch Build</th>
-            <td>
-              <button>Stable</button>
-            </td>
-            <td>
-              <button>Preview</button>
-            </td>
-            <td>
-              <button>LTS</button>
-            </td>
-          </tr>
-          <tr>
-            <th>Package</th>
-            <td style={{ width: '18.75%' }}>
-              <button>Conda</button>
-            </td>
-            <td style={{ width: '18.75%' }}>
-              <button>Pip</button>
-            </td>
-            <td style={{ width: '18.75%' }}>
-              <button>LibTorch</button>
-            </td>
-            <td style={{ width: '18.75%' }}>
-              <button>Source</button>
-            </td>
-          </tr>
-          <tr>
-            <th>Language</th>
-            <td style={{ width: '37.5%' }}>
-              <button>Python</button>
-            </td>
-            <td style={{ width: '37.5%' }}>
-              <button>C++/Java</button>
-            </td>
-          </tr>
-          <tr>
-            <th>Compute Platform</th>
-            <td style={{ width: '18.75%' }}>
-              <button>CUDA 10.2</button>
-            </td>
-            <td style={{ width: '18.75%' }}>
-              <button>CUDA 11.3</button>
-            </td>
-            <td style={{ width: '18.75%' }}>
-              <button>ROCM 4.2 (beta)</button>
-            </td>
-            <td style={{ width: '18.75%' }}>
-              <button>CPU</button>
-            </td>
-          </tr>
-          <tr>
-            <th>Run this Command:</th>
-            <td style={{ width: '65%' }}>
-              <code>
-                pip3 install torch torchvision torchaudio --extra-index-url
-                https://download.pytorch.org/whl/cu113
-              </code>
-            </td>
-            <td style={{ width: '10%' }}>
-              <button
-                onClick={() => {
-                  navigator.clipboard.writeText(
-                    `pip3 install torch torchvision torchaudio --extra-index-url https://download.pytorch.org/whl/cu113`
-                  )
-                }}
-              >
-                clipboard image
-              </button>
-            </td>
-          </tr>
-        </table>
+        <Table />
       </main>
     </div>
   )

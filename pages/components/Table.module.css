@@ -1,0 +1,68 @@
+.table {
+  width: 50vw;
+  height: 50vh;
+}
+
+.table a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.table tr {
+  display: flex;
+  flex-direction: row;
+  text-align: left;
+  align-items: center;
+}
+
+.table th {
+  width: 25%;
+  height: 100%;
+  border-left: 2px solid gray;
+  text-align: left;
+}
+
+.table td {
+  width: 25%;
+  height: 100%;
+}
+
+.table button {
+  background-color: #f3f4f7;
+  width: 100%;
+  height: 100%;
+  border: 2px solid transparent;
+  padding: 2%;
+  text-align: left;
+  padding-left: 14px;
+}
+
+.table button.focus {
+  background-color: #ee4c2c;
+  color: white;
+}
+
+.table button:active {
+  background-color: #ee4c2c;
+}
+
+.table button:hover {
+  background-color: #ee4c2c;
+}
+
+.table button:focus {
+  background-color: #ee4c2c;
+}
+
+.table button:focus-visible {
+  border: 2px solid grey;
+}
+
+.table code {
+  text-align: left;
+  padding-top: 2%;
+}
+
+.table th:active {
+  border-left: 2px solid black;
+}
