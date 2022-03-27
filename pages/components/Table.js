@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import CopySVG from '../../components/copy'
+import CopySVG from '../../components/copy_svg'
 import styles from './Table.module.css'
 export default function Table(props) {
   //table function using internal state to manage active looking table cells
