@@ -1,18 +1,31 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useCallback } from 'react'
 import styles from './Table.module.css'
-export default function Table(params) {
+export default function Table(props) {
+  //potential here to useRef for faster performance and keep scope to component
+  //however for this example document.querySelectorAll works with no side effects
   const [display, setDisplay] = useState({
     os: 'Windows',
     build: 'Stable',
     package: 'Pip',
     language: 'Python',
-    paltform: 'CUDA 10.2'
+    platform: 'CUDA 10.2'
   })
 
   useEffect(() => {
-    let buttons = document.querySelectorAll('button')
-    console.log(buttons)
-
+    for (const property in display) {
+      let buttonNode = document.querySelectorAll(`#${property}`)
+      for (const item of buttonNode) {
+        //loop through node list to find matching {display} property values
+        //and make them 'active' looking
+        if (display[property] === item.textContent) {
+          item.style.backgroundColor = '#ee4c2c'
+          item.style.color = 'white'
+        } else {
+          item.style.backgroundColor = 'white'
+          item.style.color = 'black'
+        }
+      }
+    }
     return () => {}
   }, [display])
 
@@ -23,21 +36,22 @@ export default function Table(params) {
   }
 
   return (
-    <table className={styles.table}>
+    //semantic html with buttons for keyboard accessibility
+    <table className={styles['install-table']}>
       <tbody>
         <tr>
           <th>Your OS</th>
-          <td>
+          <td style={{ width: '25%' }}>
             <button onClick={handleActiveButton} id={'os'}>
               Linux
             </button>
           </td>
-          <td>
+          <td style={{ width: '25%' }}>
             <button onClick={handleActiveButton} id={'os'}>
               Mac
             </button>
           </td>
-          <td>
+          <td style={{ width: '25%' }}>
             <button onClick={handleActiveButton} id={'os'}>
               Windows
             </button>
@@ -45,17 +59,17 @@ export default function Table(params) {
         </tr>
         <tr>
           <th>PyTorch Build</th>
-          <td>
+          <td style={{ width: '25%' }}>
             <button onClick={handleActiveButton} id={'build'}>
               Stable
             </button>
           </td>
-          <td>
+          <td style={{ width: '25%' }}>
             <button onClick={handleActiveButton} id={'build'}>
               Preview
             </button>
           </td>
-          <td>
+          <td style={{ width: '25%' }}>
             <button onClick={handleActiveButton} id={'build'}>
               LTS
             </button>
@@ -105,7 +119,7 @@ export default function Table(params) {
             </button>
           </td>
           <td style={{ width: '18.75%' }}>
-            <button onClick={handleActiveButton} id={'platform'}>
+            <button onClick={handleActiveButton} id={'platform'} disabled>
               CUDA 11.3
             </button>
           </td>

@@ -1,68 +1,77 @@
-.table {
+.install-table {
   width: 50vw;
   height: 50vh;
 }
 
-.table a {
+.install-table tbody {
+  height: 100%;
+}
+
+.install-table a {
   color: inherit;
   text-decoration: none;
 }
 
-.table tr {
+.install-table tr {
   display: flex;
   flex-direction: row;
-  text-align: left;
   align-items: center;
 }
 
-.table th {
+.install-table th {
   width: 25%;
-  height: 100%;
+
   border-left: 2px solid gray;
   text-align: left;
 }
 
-.table td {
-  width: 25%;
-  height: 100%;
+.install-table td {
+  border: 1px solid transparent;
+
 }
 
-.table button {
-  background-color: #f3f4f7;
+.install-table button {
   width: 100%;
-  height: 100%;
   border: 2px solid transparent;
-  padding: 2%;
+  padding: 4%;
   text-align: left;
-  padding-left: 14px;
+  cursor: pointer;
+  background-color: white;
+  height: 100%;
 }
 
-.table button.focus {
+.install-table code {
+  display: inline-block;
+  text-align: left;
+  background-color: #ffffff;
+  padding: 4%;
+}
+
+.install-table button.focus {
   background-color: #ee4c2c;
   color: white;
 }
 
-.table button:active {
+.install-table button:disabled {
+  text-decoration: line-through;
+}
+
+.install-table button:active {
   background-color: #ee4c2c;
 }
 
-.table button:hover {
+.install-table button:hover {
   background-color: #ee4c2c;
 }
 
-.table button:focus {
-  background-color: #ee4c2c;
+.install-table button:focus {
+  background-color: #ee4c2c4b;
 }
 
-.table button:focus-visible {
+.install-table button:focus-visible {
   border: 2px solid grey;
 }
 
-.table code {
-  text-align: left;
-  padding-top: 2%;
-}
-
-.table th:active {
+.install-table th:active {
   border-left: 2px solid black;
 }

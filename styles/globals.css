@@ -1,6 +1,5 @@
 * {
   box-sizing: border-box;
-  background-color: #f3f4f7;
 }
 
 html,
@@ -11,5 +10,9 @@ body {
     Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 
-
-
+main {
+  padding-top: 20vh;
+  padding-left: 20vw;
+  background-color: #f3f4f7;
+  height: 100vh;
+}
