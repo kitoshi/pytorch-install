@@ -165,7 +165,7 @@ export default function Table(props) {
               }}
               style={{
                 backgroundColor: 'transparent',
-                padding: '20%',
+                padding: '25%',
                 overflow: 'hidden'
               }}
             >

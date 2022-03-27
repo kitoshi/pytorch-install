@@ -65,7 +65,7 @@
 }
 
 .install-table button:hover {
-  background-color: #ee4c2c;
+  border: 2px solid black;
 }
 
 .install-table button:focus {
