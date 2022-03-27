@@ -1,10 +1,6 @@
 .install-table {
   width: 50vw;
-  height: 50vh;
-}
-
-.install-table tbody {
-  height: 100%;
+  height: 500px;
 }
 
 .install-table a {
@@ -40,7 +36,11 @@
   text-align: left;
   cursor: pointer;
   background-color: white;
-  height: 100%;
+}
+
+.install-table button.copy {
+  background-color: transparent;
+  padding: 25%;
 }
 
 .install-table code {
@@ -64,18 +64,16 @@
   background-color: #ee4c2c;
 }
 
-.install-table button:hover {
-  border: 2px solid black;
-}
-
+.install-table button:hover,
 .install-table button:focus {
-  background-color: #ee4c2c4b;
-}
-
-.install-table button:focus-visible {
-  border: 2px solid grey;
+  border: 2px solid black;
 }
 
 .install-table th:active {
   border-left: 2px solid black;
+}
+
+.install-table button.copy:hover,
+.install-table button:focus {
+  border: 2px solid transparent;
 }

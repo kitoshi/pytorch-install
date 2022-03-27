@@ -14,7 +14,7 @@ export default function Table(props) {
 
   useEffect(() => {
     for (const property in display) {
-      let buttonNode = document.querySelectorAll(`#${property}`)
+      let buttonNode = document.querySelectorAll(`.${property}`)
       for (const item of buttonNode) {
         //loop through node list to find matching {display} property values
         //and make them 'active' looking
@@ -36,15 +36,19 @@ export default function Table(props) {
 
   function handleActiveButton(e) {
     const newDisplay = { ...display }
-    newDisplay[e.currentTarget.id] = e.target.innerText
+    newDisplay[e.currentTarget.className] = e.target.innerText
     setDisplay(newDisplay)
   }
 
   function handleCopyButton(e) {
+    //swap between svg and text, after timer go back to default
     if (copy) {
       setCopy(false)
     } else {
       setCopy(true)
+      setTimeout(() => {
+        setCopy(false)
+      }, 5000)
     }
   }
 
@@ -55,17 +59,17 @@ export default function Table(props) {
         <tr>
           <th>Your OS</th>
           <td style={{ width: '25%' }}>
-            <button onClick={handleActiveButton} id={'os'}>
+            <button onClick={handleActiveButton} className='os'>
               Linux
             </button>
           </td>
           <td style={{ width: '25%' }}>
-            <button onClick={handleActiveButton} id={'os'}>
+            <button onClick={handleActiveButton} className='os'>
               Mac
             </button>
           </td>
           <td style={{ width: '25%' }}>
-            <button onClick={handleActiveButton} id={'os'}>
+            <button onClick={handleActiveButton} className='os'>
               Windows
             </button>
           </td>
@@ -73,17 +77,17 @@ export default function Table(props) {
         <tr>
           <th>PyTorch Build</th>
           <td style={{ width: '25%' }}>
-            <button onClick={handleActiveButton} id={'build'}>
+            <button onClick={handleActiveButton} className='build'>
               Stable
             </button>
           </td>
           <td style={{ width: '25%' }}>
-            <button onClick={handleActiveButton} id={'build'}>
+            <button onClick={handleActiveButton} className='build'>
               Preview
             </button>
           </td>
           <td style={{ width: '25%' }}>
-            <button onClick={handleActiveButton} id={'build'}>
+            <button onClick={handleActiveButton} className='build'>
               LTS
             </button>
           </td>
@@ -91,22 +95,22 @@ export default function Table(props) {
         <tr>
           <th>Package</th>
           <td style={{ width: '18.75%' }}>
-            <button onClick={handleActiveButton} id={'package'}>
+            <button onClick={handleActiveButton} className='package'>
               Conda
             </button>
           </td>
           <td style={{ width: '18.75%' }}>
-            <button onClick={handleActiveButton} id={'package'}>
+            <button onClick={handleActiveButton} className='package'>
               Pip
             </button>
           </td>
           <td style={{ width: '18.75%' }}>
-            <button onClick={handleActiveButton} id={'package'}>
+            <button onClick={handleActiveButton} className='package'>
               LibTorch
             </button>
           </td>
           <td style={{ width: '18.75%' }}>
-            <button onClick={handleActiveButton} id={'package'}>
+            <button onClick={handleActiveButton} className='package'>
               Source
             </button>
           </td>
@@ -114,12 +118,12 @@ export default function Table(props) {
         <tr>
           <th>Language</th>
           <td style={{ width: '37.5%' }}>
-            <button onClick={handleActiveButton} id={'language'}>
+            <button onClick={handleActiveButton} className='language'>
               Python
             </button>
           </td>
           <td style={{ width: '37.5%' }}>
-            <button onClick={handleActiveButton} id={'language'}>
+            <button onClick={handleActiveButton} className='language'>
               C++/Java
             </button>
           </td>
@@ -127,7 +131,7 @@ export default function Table(props) {
         <tr>
           <th>Compute Platform</th>
           <td style={{ width: '18.75%' }}>
-            <button onClick={handleActiveButton} id={'platform'}>
+            <button onClick={handleActiveButton} className='platform'>
               CUDA 10.2
             </button>
           </td>
@@ -137,12 +141,12 @@ export default function Table(props) {
             </button>
           </td>
           <td style={{ width: '18.75%' }}>
-            <button onClick={handleActiveButton} id={'platform'}>
+            <button onClick={handleActiveButton} className='platform'>
               ROCM 4.2 (beta)
             </button>
           </td>
           <td style={{ width: '18.75%' }}>
-            <button onClick={handleActiveButton} id={'platform'}>
+            <button onClick={handleActiveButton} className='platform'>
               CPU
             </button>
           </td>
@@ -157,6 +161,7 @@ export default function Table(props) {
           </td>
           <td style={{ width: '10%' }}>
             <button
+              className={styles.copy}
               onClick={() => {
                 navigator.clipboard.writeText(
                   `pip3 install torch torchvision torchaudio --extra-index-url https://download.pytorch.org/whl/cu113`
@@ -165,8 +170,7 @@ export default function Table(props) {
               }}
               style={{
                 backgroundColor: 'transparent',
-                padding: '25%',
-                overflow: 'hidden'
+                padding: '20%'
               }}
             >
               <CopySVG display={copy ? 'none' : 'inline-block'} />
