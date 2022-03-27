@@ -1,8 +1,8 @@
-import { useState, useEffect, useCallback } from 'react'
+import { useState, useEffect } from 'react'
+import CopySVG from '../../components/copy'
 import styles from './Table.module.css'
 export default function Table(props) {
-  //potential here to useRef for faster performance and keep scope to component
-  //however for this example document.querySelectorAll works with no side effects
+  //table function using internal state to manage active looking table cells
   const [display, setDisplay] = useState({
     os: 'Windows',
     build: 'Stable',
@@ -10,6 +10,7 @@ export default function Table(props) {
     language: 'Python',
     platform: 'CUDA 10.2'
   })
+  const [copy, setCopy] = useState(false)
 
   useEffect(() => {
     for (const property in display) {
@@ -21,8 +22,12 @@ export default function Table(props) {
           item.style.backgroundColor = '#ee4c2c'
           item.style.color = 'white'
         } else {
-          item.style.backgroundColor = 'white'
-          item.style.color = 'black'
+          if (item.disabled) {
+            //check if disabled and leave it
+          } else {
+            item.style.backgroundColor = 'white'
+            item.style.color = 'black'
+          }
         }
       }
     }
@@ -33,6 +38,14 @@ export default function Table(props) {
     const newDisplay = { ...display }
     newDisplay[e.currentTarget.id] = e.target.innerText
     setDisplay(newDisplay)
+  }
+
+  function handleCopyButton(e) {
+    if (copy) {
+      setCopy(false)
+    } else {
+      setCopy(true)
+    }
   }
 
   return (
@@ -147,10 +160,21 @@ export default function Table(props) {
               onClick={() => {
                 navigator.clipboard.writeText(
                   `pip3 install torch torchvision torchaudio --extra-index-url https://download.pytorch.org/whl/cu113`
-                )
+                ),
+                  handleCopyButton()
+              }}
+              style={{
+                backgroundColor: 'transparent',
+                padding: '20%',
+                overflow: 'hidden'
               }}
             >
-              clipboard image
+              <CopySVG display={copy ? 'none' : 'inline-block'} />
+              <p
+                style={copy ? { display: 'inline-block' } : { display: 'none' }}
+              >
+                Copied!
+              </p>
             </button>
           </td>
         </tr>
