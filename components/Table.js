@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import CopySVG from '../../components/copy_svg'
+import CopySVG from './svg/copy_svg'
 import styles from './Table.module.css'
 export default function Table(props) {
   //table function using internal state to manage active looking table cells
@@ -21,17 +21,14 @@ export default function Table(props) {
         if (display[property] === item.textContent) {
           item.style.backgroundColor = '#ee4c2c'
           item.style.color = 'white'
+        } else if (item.disabled) {
+          //check if disabled and leave it
         } else {
-          if (item.disabled) {
-            //check if disabled and leave it
-          } else {
-            item.style.backgroundColor = 'white'
-            item.style.color = 'black'
-          }
+          item.style.backgroundColor = 'white'
+          item.style.color = 'black'
         }
       }
     }
-    return () => {}
   }, [display])
 
   function handleActiveButton(e) {
@@ -40,7 +37,7 @@ export default function Table(props) {
     setDisplay(newDisplay)
   }
 
-  function handleCopyButton(e) {
+  function handleCopyButton() {
     //swap between svg and text, after timer go back to default
     if (copy) {
       setCopy(false)
@@ -170,12 +167,18 @@ export default function Table(props) {
               }}
               style={{
                 backgroundColor: 'transparent',
-                padding: '20%'
+                paddingTop: '10%',
+                paddingBottom: '10%'
               }}
+              disabled={copy ? true : false}
             >
               <CopySVG display={copy ? 'none' : 'inline-block'} />
               <p
-                style={copy ? { display: 'inline-block' } : { display: 'none' }}
+                style={
+                  copy
+                    ? { display: 'inline-block', color: 'black' }
+                    : { display: 'none' }
+                }
               >
                 Copied!
               </p>

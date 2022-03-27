@@ -9,7 +9,7 @@
 }
 
 .install-table p {
-  margin: 0;
+  margin: auto;
   width: 10%;
 }
 
@@ -58,14 +58,15 @@
 .install-table button:disabled {
   text-decoration: line-through;
   color: rgb(184, 184, 184);
+  cursor: auto;
 }
 
-.install-table button:active {
+.install-table button:enabled:active {
   background-color: #ee4c2c;
 }
 
-.install-table button:hover,
-.install-table button:focus {
+.install-table button:enabled:hover,
+.install-table button:enabled:focus {
   border: 2px solid black;
 }
 
@@ -74,6 +75,10 @@
 }
 
 .install-table button.copy:hover,
-.install-table button:focus {
+.install-table button.copy:focus {
+  border: 2px solid transparent;
+}
+
+.install-table button.copy:active {
   border: 2px solid transparent;
 }
