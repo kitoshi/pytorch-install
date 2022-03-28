@@ -56,17 +56,17 @@ export default function Table(props) {
         <tr>
           <th>Your OS</th>
           <td style={{ width: '25%' }}>
-            <button onClick={handleActiveButton} className='os'>
+            <button type='button' onClick={handleActiveButton} className='os'>
               Linux
             </button>
           </td>
           <td style={{ width: '25%' }}>
-            <button onClick={handleActiveButton} className='os'>
+            <button type='button' onClick={handleActiveButton} className='os'>
               Mac
             </button>
           </td>
           <td style={{ width: '25%' }}>
-            <button onClick={handleActiveButton} className='os'>
+            <button type='button' onClick={handleActiveButton} className='os'>
               Windows
             </button>
           </td>
@@ -74,17 +74,29 @@ export default function Table(props) {
         <tr>
           <th>PyTorch Build</th>
           <td style={{ width: '25%' }}>
-            <button onClick={handleActiveButton} className='build'>
+            <button
+              type='button'
+              onClick={handleActiveButton}
+              className='build'
+            >
               Stable
             </button>
           </td>
           <td style={{ width: '25%' }}>
-            <button onClick={handleActiveButton} className='build'>
+            <button
+              type='button'
+              onClick={handleActiveButton}
+              className='build'
+            >
               Preview
             </button>
           </td>
           <td style={{ width: '25%' }}>
-            <button onClick={handleActiveButton} className='build'>
+            <button
+              type='button'
+              onClick={handleActiveButton}
+              className='build'
+            >
               LTS
             </button>
           </td>
@@ -92,22 +104,38 @@ export default function Table(props) {
         <tr>
           <th>Package</th>
           <td style={{ width: '18.75%' }}>
-            <button onClick={handleActiveButton} className='package'>
+            <button
+              type='button'
+              onClick={handleActiveButton}
+              className='package'
+            >
               Conda
             </button>
           </td>
           <td style={{ width: '18.75%' }}>
-            <button onClick={handleActiveButton} className='package'>
+            <button
+              type='button'
+              onClick={handleActiveButton}
+              className='package'
+            >
               Pip
             </button>
           </td>
           <td style={{ width: '18.75%' }}>
-            <button onClick={handleActiveButton} className='package'>
+            <button
+              type='button'
+              onClick={handleActiveButton}
+              className='package'
+            >
               LibTorch
             </button>
           </td>
           <td style={{ width: '18.75%' }}>
-            <button onClick={handleActiveButton} className='package'>
+            <button
+              type='button'
+              onClick={handleActiveButton}
+              className='package'
+            >
               Source
             </button>
           </td>
@@ -115,12 +143,20 @@ export default function Table(props) {
         <tr>
           <th>Language</th>
           <td style={{ width: '37.5%' }}>
-            <button onClick={handleActiveButton} className='language'>
+            <button
+              type='button'
+              onClick={handleActiveButton}
+              className='language'
+            >
               Python
             </button>
           </td>
           <td style={{ width: '37.5%' }}>
-            <button onClick={handleActiveButton} className='language'>
+            <button
+              type='button'
+              onClick={handleActiveButton}
+              className='language'
+            >
               C++/Java
             </button>
           </td>
@@ -128,22 +164,39 @@ export default function Table(props) {
         <tr>
           <th>Compute Platform</th>
           <td style={{ width: '18.75%' }}>
-            <button onClick={handleActiveButton} className='platform'>
+            <button
+              type='button'
+              onClick={handleActiveButton}
+              className='platform'
+            >
               CUDA 10.2
             </button>
           </td>
           <td style={{ width: '18.75%' }}>
-            <button onClick={handleActiveButton} id={'platform'} disabled>
+            <button
+              type='button'
+              onClick={handleActiveButton}
+              id={'platform'}
+              disabled
+            >
               CUDA 11.3
             </button>
           </td>
           <td style={{ width: '18.75%' }}>
-            <button onClick={handleActiveButton} className='platform'>
+            <button
+              type='button'
+              onClick={handleActiveButton}
+              className='platform'
+            >
               ROCM 4.2 (beta)
             </button>
           </td>
           <td style={{ width: '18.75%' }}>
-            <button onClick={handleActiveButton} className='platform'>
+            <button
+              type='button'
+              onClick={handleActiveButton}
+              className='platform'
+            >
               CPU
             </button>
           </td>
@@ -158,6 +211,7 @@ export default function Table(props) {
           </td>
           <td style={{ width: '10%' }}>
             <button
+              type='button'
               className={styles.copy}
               onClick={() => {
                 navigator.clipboard.writeText(
