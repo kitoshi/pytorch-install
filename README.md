@@ -1,10 +1,11 @@
 ## Overview
 
 Redesign of [https://pytorch.org/](https://pytorch.org/) installation table.
-Desktop browser design improvements.
--Keyboard Accessible
--Copy code block to clipboard
--Disabled inactive buttons
+Desktop browser design improvements:
+
+- Keyboard Accessible
+- Copy code block to clipboard
+- Disabled inactive buttons
 
 ## NextJS Boilerplate
 
