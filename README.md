@@ -1,3 +1,13 @@
+## Overview
+
+Redesign of [https://pytorch.org/](https://pytorch.org/) installation table.
+Desktop browser design improvements.
+-Keyboard Accessible
+-Copy code block to clipboard
+-Disabled inactive buttons
+
+## NexJS Boilerplate
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
