@@ -7,7 +7,7 @@ Desktop browser design improvements:
 - Copy code block to clipboard
 - Disabled inactive buttons
 
-<img src="screenshots/project_screenshot.png" alt="project screenshot" width="900" height="240"></img>
+<img src="screenshots/project_screenshot.png" alt="project screenshot" width="978" height="352"></img>
 
 ## NextJS Boilerplate
 
