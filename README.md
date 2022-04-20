@@ -7,6 +7,8 @@ Desktop browser design improvements:
 - Copy code block to clipboard
 - Disabled inactive buttons
 
+<img src="screenshots/project_screenshot.png" alt="project screenshot" width="960" height="240"></img>
+
 ## NextJS Boilerplate
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
